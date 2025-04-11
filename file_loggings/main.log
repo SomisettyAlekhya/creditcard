@@ -1,0 +1,186 @@
+2025-04-02 10:01:03,165 - INFO - The Data Loaded successfully
+2025-04-02 10:01:03,165 - INFO - The number of rows : 150002 and columns : 18
+2025-04-02 10:01:03,259 - WARNING - The Features with Null values : ['NPA Status', 'RevolvingUtilizationOfUnsecuredLines', 'age', 'Gender', 'Region', 'MonthlyIncome', 'Rented_OwnHouse', 'Occupation', 'Education', 'NumberOfTime30-59DaysPastDueNotWorse', 'DebtRatio', 'MonthlyIncome.1', 'NumberOfOpenCreditLinesAndLoans', 'NumberOfTimes90DaysLate', 'NumberRealEstateLoansOrLines', 'NumberOfTime60-89DaysPastDueNotWorse', 'NumberOfDependents', 'Good_Bad']
+2025-04-02 10:01:03,440 - WARNING - The Features with Null values : ['MonthlyIncome', 'MonthlyIncome.1', 'NumberOfDependents']
+2025-04-02 10:01:10,214 - WARNING - Both Features has same data : MonthlyIncome : MonthlyIncome.1
+2025-04-02 10:01:10,393 - INFO - Training data size : (120000, 120000)
+2025-04-02 10:01:10,394 - INFO - Testing data size : (30000, 30000)
+2025-04-02 10:01:10,397 - INFO - Dtype of Monthly Income : float64
+2025-04-02 10:01:10,398 - INFO - Dtype of NumberofDependents : object
+2025-04-02 10:01:10,523 - INFO - Dtype of NumberofDependents : float64
+2025-04-02 10:01:10,787 - INFO - Null values in training data : NPA Status                              0
+RevolvingUtilizationOfUnsecuredLines    0
+age                                     0
+Gender                                  0
+Region                                  0
+Rented_OwnHouse                         0
+Occupation                              0
+Education                               0
+NumberOfTime30-59DaysPastDueNotWorse    0
+DebtRatio                               0
+NumberOfOpenCreditLinesAndLoans         0
+NumberOfTimes90DaysLate                 0
+NumberRealEstateLoansOrLines            0
+NumberOfTime60-89DaysPastDueNotWorse    0
+MonthlyIncome_ran_sam                   0
+NumberOfDependents_ran_sam              0
+dtype: int64
+2025-04-02 10:01:10,811 - INFO - Null values in training data : NPA Status                              0
+RevolvingUtilizationOfUnsecuredLines    0
+age                                     0
+Gender                                  0
+Region                                  0
+Rented_OwnHouse                         0
+Occupation                              0
+Education                               0
+NumberOfTime30-59DaysPastDueNotWorse    0
+DebtRatio                               0
+NumberOfOpenCreditLinesAndLoans         0
+NumberOfTimes90DaysLate                 0
+NumberRealEstateLoansOrLines            0
+NumberOfTime60-89DaysPastDueNotWorse    0
+MonthlyIncome_ran_sam                   0
+NumberOfDependents_ran_sam              0
+dtype: int64
+2025-04-02 10:01:10,872 - INFO - categorical columns from the data : Index(['Gender', 'Region', 'Rented_OwnHouse', 'Occupation', 'Education'], dtype='object')
+2025-04-02 10:01:11,241 - INFO - Categorical Features are converted into Numerical Columns
+2025-04-02 10:01:11,241 - INFO - By using One Hot Encoder
+2025-04-02 10:01:11,251 - INFO -        Rented_OwnHouse   Occupation     Education  Gender_Female  Gender_Male  Region_Central  Region_East  Region_North  Region_South  Region_West
+27935           Rented     Self_Emp      Graduate            0.0          1.0             0.0          0.0           1.0           0.0          0.0
+87120         Ownhouse     Self_Emp      Graduate            1.0          0.0             1.0          0.0           0.0           0.0          0.0
+97991         Ownhouse     Self_Emp      Graduate            0.0          1.0             1.0          0.0           0.0           0.0          0.0
+66780           Rented     Officer2  Professional            0.0          1.0             1.0          0.0           0.0           0.0          0.0
+140275        Ownhouse  Non-officer  Professional            0.0          1.0             0.0          0.0           0.0           0.0          1.0
+2025-04-02 10:01:11,763 - INFO - Ordinal Features are converted to numerical columns successfully
+2025-04-02 10:01:11,847 - INFO - Converted to Log Level :
+2025-04-02 10:01:35,133 - INFO - outliers from Training data and Test data handled succesfully
+2025-04-02 10:01:35,133 - INFO - Feature Engineering completed : Know we will combine num and cat columns
+2025-04-02 10:01:35,164 - INFO - Concatination Successfull
+2025-04-02 10:01:35,164 - INFO - Training data size : (120000, 21)
+2025-04-02 10:01:35,164 - INFO - Testing data size : (30000, 21)
+2025-04-02 10:01:35,224 - INFO - Columns with 0.1 variance : Index(['NPA Status', 'RevolvingUtilizationOfUnsecuredLines', 'age',
+       'NumberOfTime30-59DaysPastDueNotWorse', 'NumberOfTimes90DaysLate',
+       'NumberOfTime60-89DaysPastDueNotWorse'],
+      dtype='object')
+2025-04-02 10:01:35,224 - INFO - Columns with 0.1 variance where removed : Index(['NPA Status', 'RevolvingUtilizationOfUnsecuredLines', 'age',
+       'NumberOfTime30-59DaysPastDueNotWorse', 'NumberOfTimes90DaysLate',
+       'NumberOfTime60-89DaysPastDueNotWorse'],
+      dtype='object')
+2025-04-02 10:01:35,232 - INFO - After removing unwanted columns : (120000, 15)
+2025-04-02 10:01:35,288 - INFO - Targeted cols : Rented_OwnHouse : 0.08748130646329363
+2025-04-02 10:01:35,288 - INFO - Targeted cols : Occupation : 0.6678212093583445
+2025-04-02 10:01:35,288 - INFO - Targeted cols : Gender_Female : 0.21745598814766845
+2025-04-02 10:01:35,288 - INFO - Targeted cols : Gender_Male : 0.21745598814766845
+2025-04-02 10:01:35,288 - INFO - Targeted cols : Region_South : 0.6018263577165577
+2025-04-02 10:01:35,288 - INFO - After removing unwanted columns using Hypothesis Testing: (120000, 10)
+2025-04-02 10:01:35,304 - INFO - After removing unwanted columns using Hypothesis Testing : (30000, 10)
+2025-04-02 10:01:35,304 - INFO - After removing Index(['DebtRatio', 'NumberOfOpenCreditLinesAndLoans',
+       'NumberRealEstateLoansOrLines', 'MonthlyIncome_ran_sam',
+       'NumberOfDependents_ran_sam', 'Education', 'Region_Central',
+       'Region_East', 'Region_North', 'Region_West'],
+      dtype='object')
+2025-04-02 10:01:35,305 - INFO - Before Upsampling Technique
+2025-04-02 10:01:35,308 - INFO - Number of rows for 0 -> : 8070
+2025-04-02 10:01:35,317 - INFO - Number of rows for 1 -> : 111930
+2025-04-02 10:01:35,707 - INFO - After Upsampling Technique
+2025-04-02 10:01:35,748 - INFO - Number of rows for 0 -> : 111930
+2025-04-02 10:01:35,774 - INFO - Number of rows for 1 -> : 111930
+2025-04-02 10:01:35,791 - INFO - info :    DebtRatio  NumberOfOpenCreditLinesAndLoans  NumberRealEstateLoansOrLines  MonthlyIncome_ran_sam  ...  Region_Central  Region_East  Region_North  Region_West
+0   0.261041                         1.609438                           0.0               7.824446  ...             0.0          0.0           0.0          1.0
+
+[1 rows x 10 columns]
+2025-04-02 10:01:35,874 - INFO - info : [[-0.4669084  -0.83520465 -1.09271625 ... -0.3491308  -0.56589962
+   1.4451961 ]
+ [-0.3267496   0.77219105  0.32284412 ... -0.3491308  -0.56589962
+  -0.69274938]
+ [-0.4678303  -0.21742814 -1.09271625 ... -0.3491308  -0.56589962
+  -0.69274938]
+ ...
+ [-0.40833575  0.64868982  1.15089385 ... -0.3491308   1.76897287
+  -0.69274938]
+ [-0.56533299 -1.77310098 -1.09271625 ... -0.3491308  -0.56589962
+  -0.69274938]
+ [ 1.57197564 -1.77310098 -1.09271625 ... -0.3491308  -0.56589962
+   1.4451961 ]]
+2025-04-02 10:01:35,874 - INFO - ______KNN______
+2025-04-02 10:16:45,424 - INFO - ALL K VALUES[0.8297666666666667, 0.8120666666666667, 0.7973, 0.7864, 0.7779333333333334, 0.7721, 0.7671666666666667, 0.7639, 0.7616333333333334, 0.7588666666666667, 0.7578333333333334, 0.7573666666666666, 0.7552333333333333, 0.7531, 0.7521, 0.7503666666666666, 0.7505666666666667, 0.7488333333333334, 0.7478666666666667, 0.7465333333333334, 0.7449666666666667, 0.7434333333333333, 0.7424333333333333, 0.7417666666666667, 0.7405, 0.7396666666666667, 0.7386666666666667, 0.7385, 0.7380333333333333, 0.7359333333333333, 0.7358666666666667, 0.7353, 0.7354333333333334]
+2025-04-02 10:16:45,424 - INFO - BEST K VALUE 3 with ACCURACY 0.8297666666666667
+2025-04-02 10:17:03,311 - INFO - KNN TEST ACCURACY 0.8297666666666667
+2025-04-02 10:17:18,963 - INFO - KNN CONFUSION MATRIX[[  956  1000]
+ [ 4107 23937]]
+2025-04-02 10:17:33,177 - INFO - KNN CLASSIFICATION REPORT               precision    recall  f1-score   support
+
+           0       0.19      0.49      0.27      1956
+           1       0.96      0.85      0.90     28044
+
+    accuracy                           0.83     30000
+   macro avg       0.57      0.67      0.59     30000
+weighted avg       0.91      0.83      0.86     30000
+
+2025-04-02 10:17:33,185 - INFO - ___DECISION TREE____
+2025-04-02 10:17:37,341 - INFO - DT TEST ACCURACY 0.8700666666666667
+2025-04-02 10:17:37,373 - INFO - DT CONFUSION MATRIX[[  709  1247]
+ [ 2651 25393]]
+2025-04-02 10:17:37,403 - INFO - DT CLASSIFICATION REPORT               precision    recall  f1-score   support
+
+           0       0.21      0.36      0.27      1956
+           1       0.95      0.91      0.93     28044
+
+    accuracy                           0.87     30000
+   macro avg       0.58      0.63      0.60     30000
+weighted avg       0.90      0.87      0.89     30000
+
+2025-04-02 10:17:37,403 - INFO - _____LOGISTIC REGRESSION_____
+2025-04-02 10:17:37,646 - INFO - LR TEST ACCURACY 0.676
+2025-04-02 10:17:37,661 - INFO - LR CONFUSION MATRIX[[ 1579   377]
+ [ 9343 18701]]
+2025-04-02 10:17:37,677 - INFO - LR CLASSIFICATION REPORT               precision    recall  f1-score   support
+
+           0       0.14      0.81      0.25      1956
+           1       0.98      0.67      0.79     28044
+
+    accuracy                           0.68     30000
+   macro avg       0.56      0.74      0.52     30000
+weighted avg       0.93      0.68      0.76     30000
+
+2025-04-02 10:17:37,677 - INFO - ____RANDOM FOREST_____
+2025-04-02 10:27:38,697 - INFO - ALL TREE VALUES[0.8691666666666666, 0.8833, 0.8879333333333334, 0.8881333333333333, 0.8901, 0.8891666666666667, 0.8854666666666666, 0.8874, 0.8883666666666666, 0.8854333333333333]
+2025-04-02 10:27:38,697 - INFO - BEST TREE VALUE 87 with ACCURACY 0.8901
+2025-04-02 10:29:10,750 - INFO - RF TEST ACCURACY 0.8901
+2025-04-02 10:29:11,649 - INFO - RF CONFUSION MATRIX[[  804  1152]
+ [ 2145 25899]]
+2025-04-02 10:29:12,592 - INFO - RF CLASSIFICATION REPORT               precision    recall  f1-score   support
+
+           0       0.27      0.41      0.33      1956
+           1       0.96      0.92      0.94     28044
+
+    accuracy                           0.89     30000
+   macro avg       0.62      0.67      0.63     30000
+weighted avg       0.91      0.89      0.90     30000
+
+2025-04-02 10:30:41,537 - INFO - BEST TREE VALUE IDENTIFIED is 99 with Accuracy 0.8903333333333333
+2025-04-02 10:30:42,022 - INFO - RF TEST ACCURACY 0.8907333333333334
+2025-04-02 10:30:42,505 - INFO - RF CONFUSION MATRIX[[  801  1155]
+ [ 2123 25921]]
+2025-04-02 10:30:42,991 - INFO - RF CLASSIFICATION REPORT               precision    recall  f1-score   support
+
+           0       0.27      0.41      0.33      1956
+           1       0.96      0.92      0.94     28044
+
+    accuracy                           0.89     30000
+   macro avg       0.62      0.67      0.63     30000
+weighted avg       0.91      0.89      0.90     30000
+
+2025-04-02 10:30:43,053 - INFO - _____NAIVE BAYES_____
+2025-04-02 10:30:43,101 - INFO - NB TEST ACCURACY 0.5009
+2025-04-02 10:30:43,117 - INFO - NB CONFUSION MATRIX[[ 1780   176]
+ [14797 13247]]
+2025-04-02 10:30:43,117 - INFO - NB CLASSIFICATION REPORT               precision    recall  f1-score   support
+
+           0       0.11      0.91      0.19      1956
+           1       0.99      0.47      0.64     28044
+
+    accuracy                           0.50     30000
+   macro avg       0.55      0.69      0.42     30000
+weighted avg       0.93      0.50      0.61     30000
+
